@@ -1,0 +1,148 @@
+memory_module_definitions:
+  - code: "M"
+    chinese_name: "主線記憶"
+    english_name: "Main Storyline Memory"
+    description: "記錄角色間的重大主線發展、分歧點與情節核心走向，作為主流程敘事的骨架。"
+
+  - code: "R"
+    chinese_name: "關係變化"
+    english_name: "Relationship Dynamics"
+    description: "紀錄主角與其他角色間的信任、依附、主從等關係層次的變化與再定位。"
+
+  - code: "E"
+    chinese_name: "事件進展"
+    english_name: "Event Progress Tracker"
+    description: "追蹤任務、衝突或劇情線索的動態進展，紀錄各階段成果與影響。"
+
+  - code: "T"
+    chinese_name: "反應模組"
+    english_name: "Tone/Behavior Response"
+    description: "定義角色在特定情境下的語氣、行為傾向與非語言反應，用以維持敘事一致性。"
+
+  - code: "W"
+    chinese_name: "文風偏好"
+    english_name: "Writing Style Preference"
+    description: "紀錄使用者偏好的敘事語氣、句式、詞彙與描寫習慣，作為輸出文風依據。"
+
+  - code: "KN"
+    chinese_name: "知識理解"
+    english_name: "Knowledge & Awareness Tracker"
+    description: "管理角色對制度、術語、裝置等的接觸歷程與理解狀態，確保知識反應符合劇情邏輯。"
+
+  - code: "N"
+    chinese_name: "配角標籤"
+    english_name: "NPC Role Tag Library"
+    description: "管理世界中配角的背景、語氣、關聯任務與登場條件，作為敘事支援資料庫。"
+
+usage_rules:
+  auto_included_modules:
+    - "M"
+    - "R"
+    - "E"
+    - "T"
+    - "W"
+    - "KN"
+    - "N"
+  cross_reference: true
+  mandatory_tags:
+    - "角色"
+    - "對象"
+    - "時間"
+    - "發展層級"
+  format_enforcement: true
+  separate_by_type: true
+  incremental_id_rule: true
+  preserve_original_style: true
+  consistency_check: true
+  do_not_override_without_order: true
+
+memory_module_format:
+
+M_module:
+  - module_id: "M001"
+    type: "主線記憶模組"
+    time: ""
+    location: ""
+    participants: []
+    summary: ""
+    key_dialogues: []
+    impact: []
+    emotional_shifts: {}
+    details: []
+    world_update: []
+    keywords: []
+    memory_grade: ""  # S/A/B/C
+    related_events: []
+
+R_module:
+  - module_id: "R001"
+    type: "關係變化模組"
+    time: ""
+    latest_event: ""
+    current_status: ""
+    inner_state: {}
+    emotional_rules: []
+    relation_update: ""
+    trigger_quotes: []
+
+E_module:
+  - module_id: "E001"
+    type: "事件進展模組"
+    event: ""
+    time: ""
+    location: ""
+    participants: []
+    current_status: ""
+    known_info: []
+    unresolved_issues: []
+    next_actions: []
+    related_events: []
+    tags: []
+
+T_module:
+  - module_id: "T001"
+    type: "反應模組"
+    context: ""
+    preset_reaction: ""
+    trigger_modules: []
+    banned_reactions: []
+    tone_style: ""
+
+KN_module:
+  - module_id: "KN001"
+    type: "知識理解模組"
+    title: ""
+    character: ""
+    start_time: ""
+    topic: ""
+    first_contact_method: ""
+    understanding:
+      initial: ""  # 未知｜模糊理解｜感官辨識｜誤會中
+      progress: ""  # 被解釋後理解｜觀察學習｜誤用→修正
+      stable: ""  # 熟悉使用｜可辨識但無法操作｜能教導他人
+    learning_summary: []
+    auto_trigger_notes: []
+
+N_module:
+  - module_id: "N001"
+    type: "配角標籤模組"
+    name: ""
+    identity: ""
+    relation_to_main: ""
+    first_appearance: ""
+    personality: ""
+    followup_roles: ""
+
+W_module:
+  - module_id: "W001"
+    type: "文風偏好模組"
+    user_id: ""
+    style_code: []
+    linked_modules: []
+    tone_profile: ""
+    preferred_words: []
+    action_descriptions: []
+    description_priority: []
+    tone_syntax: ""
+    auto_tone_modules: []
+    last_updated: ""
