@@ -1,0 +1,9 @@
+
+services:
+  - type: web
+    name: gpt-rp-api
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn GPT_RP:app --host 0.0.0.0 --port $PORT"
+    autoDeploy: true
